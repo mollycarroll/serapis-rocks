@@ -3,6 +3,11 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
+
+# static root is where files are stored after being collected by collectstatic
+STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')
+MEDIA_ROOT = os.path.join(PROJECT_ROOT, 'media')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
@@ -20,6 +25,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'shows.apps.ShowsConfig',
+    'django_simple_bulma',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -106,4 +112,25 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
+
 STATIC_URL = '/static/'
+MEDIA_URL = '/media/'
+
+STATICFILES_FINDERS = [
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    'django_simple_bulma.finders.SimpleBulmaFinder',
+]
+
+# Custom settings for django-simple-bulma
+BULMA_SETTINGS = {
+    "variables": {
+        "primary": "#81968f",
+        "link": "#96bdc6",
+        "success": "#331832",
+        "info": "#000000",
+        "warning": "#ddbea8",
+        "body-background-color": "#000000",
+        "family-primary": "Inconsolata"
+    }
+}

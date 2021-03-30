@@ -9,19 +9,153 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Serapis</title>
+
+    {% load django_simple_bulma %}
+    {% bulma %}
+    {% font_awesome %}
+
+      <!-- google fonts -->
+      <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    {% for show in show_list %}
-              <article>
-                <span>
+  {% block Facebook %}
+  <div id="fb-root"></div>
+  <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v6.0"></script>
+  {% endblock %}
+
+  <nav class="navbar is-dark">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="">
+        serapis - authentic rock music
+      </a>
+
+      <div class="navbar-burger burger" data-target="SerapisNav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+
+    <div id="SerapisNav" class="navbar-menu">
+      <div class="navbar-start">
+        <a class="navbar-item" href="">Home</a>
+        <a class="navbar-item" href="">Music</a>
+      </div>
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <div class="field is-grouped">
+            <!-- Contact button -->
+            <p class="control">
+              <a class="bd-tw-button button is-black" href="mailto:serapisstl@gmail.com">
+                <span class="icon">
+                  <i class="fas fa-paper-plane">
+                  </i>
+                </span>
+                <span>Contact</span>
+              </a>
+            </p>
+            <!-- Listen button -->
+            <p class="control">
+              <a class="button is-primary" target="blank" href="https://soundcloud.com/serapis-authentic-rock">
+                <span class="icon">
+                  <i class="fas fa-headphones-alt">
+                  </i> </span>
+                <span>Listen</span>
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- photo banner -->
+  <section>
+    <div class="home-banner">
+
+      <figure class="image">
+  
+      </figure>
+    </div>
+
+  </section>
+
+  {% block main %}
+  <section class="section">
+    <div class="container is-fullhd">
+      <div class="columns">
+
+        <!-- upcoming shows -->
+        <div class="column">
+          <h1 class="title has-text-white">Upcoming Shows</h1>
+          <div class="tile is-ancestor">
+            <div class="tile is-vertical is-parent">
+              {% for show in show_list %}
+              <article class="tile is-child box has-background-primary has-text-info show-items">
+                <span class="is-size-3 show-text">
                   {{show.venue}}</span>
-                <span>
+                <span class="is-size-5 show-text">
                   {{show.city}}</span>
-                <span>
+                <span class="is-size-5 show-text">
                   {{show.show_date|date:"l M j"}}</span>
-                <span>
+                <span class="is-size-5 show-text">
                   {{show.show_date|time:"P"}}</span>
               </article>
-     {% endfor %}
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+
+
+        <div class="column">
+          <p class="is-size-6 has-margin-left-40 has-margin-right-40 has-padding-bottom-10">
+            For over 30 years, the band Serapis has worked hard to develop a sound that stands apart from other St. Louis area bands. A performance list that includes original rock, blues, and reggae - blended with carefully selected cover music has made
+            Serapis a leader on the St. Louis music scene. Serapis is a classic American band in every sense of the word. Originating in garages of a midwestern town, these guys honed their craft with millions of hours logged in smoke-filled bars and
+            stages nation-wide. From the beginning, their choice has always been to play “something different” - to champion the unsung heroes, and not to simply recite the hits. They have been able to pull off this stunt for so many years simply by
+            being good musicians and entertainers. But mostly because they honestly love playing music.
+          </p>
+        </div>
+
+        <div class="column">
+          <h1>
+            Facebook widget here
+          </h1>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  {% endblock %}
+
+  {% block secondary %}
+  
+  <br />
+  <!-- Members -->
+  <h1 class="title has-text-centered has-text-white">Serapis is...</h1>
+
+  <section class="columns">
+    {% for member in members %}
+    <div class="card column has-margin-20 is-paddingless">
+      <div class="card-image">
+        <figure class="image">
+          <!-- <img src="{{ MEDIA_URL }}{{ member.photo }}" /> -->
+        </figure>
+      </div>
+      <div class="card-content">
+        <p class="title is-5">
+          {{ member.name }}
+        </p>
+        <p class="subtitle is-7">
+          {{ member.description }}
+        </p>
+      </div>
+    </div>
+
+    {% endfor %}
+
+  </section>
+  {% endblock %}
+
 </body>
+
 </html>
