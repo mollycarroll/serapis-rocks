@@ -1,0 +1,27 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'shows/styles.css' %}">
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serapis</title>
+</head>
+<body>
+    {% for show in show_list %}
+              <article>
+                <span>
+                  {{show.venue}}</span>
+                <span>
+                  {{show.city}}</span>
+                <span>
+                  {{show.show_date|date:"l M j"}}</span>
+                <span>
+                  {{show.show_date|time:"P"}}</span>
+              </article>
+     {% endfor %}
+</body>
+</html>
