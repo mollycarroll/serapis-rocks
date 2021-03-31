@@ -25,3 +25,14 @@ class Musician(models.Model):
     description = models.CharField(max_length=100)
     photo = models.ImageField(upload_to='member_photos')
 
+
+class Photo(models.Model):
+    class Meta:
+        ordering = ['-date']
+
+    def __str__(self):
+        return srt(self.caption)
+
+    upload = models.ImageField(upload_to='band_photos')
+    caption = models.CharField(max_length=200)
+    date = models.DateField()
