@@ -4,6 +4,15 @@
 <body>
     {% block main %}
 
+    {% for photo in photos %}
+    <a target="_blank" href="media/{{ MEDIA_URL }}{{ photo.upload }}">
+        <img class="thumb" src="media/{{ MEDIA_URL }}{{ photo.upload }}" />
+    </a>
+    
+    <p>{{photo.caption}}</p>
+
+    {% endfor %}
+
     {% endblock %}
 
     {% block secondary %}

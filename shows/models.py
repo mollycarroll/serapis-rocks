@@ -27,12 +27,8 @@ class Musician(models.Model):
 
 
 class Photo(models.Model):
-    class Meta:
-        ordering = ['-date']
-
     def __str__(self):
-        return srt(self.caption)
+        return str(self.caption)
 
     upload = models.ImageField(upload_to='band_photos')
     caption = models.CharField(max_length=200)
-    date = models.DateField()
