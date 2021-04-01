@@ -17,6 +17,10 @@ class Show(models.Model):
     city = models.CharField(max_length=100)
 
 
+class LatestVideo(models.Model):
+    url = models.CharField(max_length=200, blank=True)
+
+
 class Musician(models.Model):
     class Meta:
         ordering = ['name']
@@ -37,12 +41,3 @@ class Photo(models.Model):
     caption = models.CharField(max_length=200)
 
 
-# class Music(models.Model):
-#     class Meta:
-#         ordering = ['-date_uploaded']
-
-#     def __str__(self):
-#         return str(self.title)
-
-#     title = models.CharField(max_length=50)
-#     date_uploaded = models.DateField(auto_now=True)
