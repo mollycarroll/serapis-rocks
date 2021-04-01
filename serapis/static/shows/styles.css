@@ -41,9 +41,11 @@ p, a {
   text-align: center;
 }
 
-.test {
+.photo {
   display: inline-block;
   vertical-align: top;
   text-align: center;
   padding: 20px;
+  margin: 10%;
+  border: 1px solid red;
 }

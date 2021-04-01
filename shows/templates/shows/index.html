@@ -159,6 +159,33 @@
     </div>
 
   </section>
+
+<!-- Members -->
+<h1 class="title has-text-centered has-text-white">Serapis is...</h1>
+
+<div class="tile is-ancestor">
+  {% for member in members %}
+  <div class="tile is-parent">
+
+    <div class="tile is-child box">
+      <figure class="image member-photo">
+        <img src="media/{{ MEDIA_URL }}{{ member.photo }}" />
+      </figure>
+      <p class="title is-4">
+        {{ member.name }}
+      </p>
+      <p class="subtitle is-5">
+        {{ member.description }}
+      </p>
+
+    </div>
+
+  </div>
+
+  {% endfor %}
+
+</div>
+
   {% endblock %}
 
 </body>
