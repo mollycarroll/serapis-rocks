@@ -9,6 +9,7 @@ app_name = 'shows'
 urlpatterns = [
     path('', views.index, name='index'),
     path('showdates', views.showdates, name='showdates'),
+    path('music', views.music, name='music'),
     path('photos', views.photos, name='photos'),
 ]
 

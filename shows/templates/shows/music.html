@@ -1,0 +1,38 @@
+{% extends 'shows/index.html' %}
+{% load static %}
+
+{% block title %}Serapis - Music{% endblock %}
+
+<body>
+{% block main %}
+<section class="hero">
+    <div class="hero-body">
+      <div class="container">
+        <h1 class="title has-text-centered has-text-white">
+          Serapis Studio Recordings
+        </h1>
+      </div>
+    </div>
+  </section>
+
+  <div class="columns">
+    <div class="column">
+      <p class="title is-4 has-margin-left-10 has-text-white">"Studio B" by Serapis (2008)</p>
+      <div class="mx-5">
+      <iframe width="100%" height="450" scrolling="no" frameborder="no" allow="autoplay"
+        src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/167305247&color=%23efcb74&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+    </div>
+    </div>
+    <div class="column">
+      <p class="title is-4 has-margin-left-10 has-text-white">
+        "Myth" by Serapis (2004)
+      </p>
+      <div class="mx-5">
+      <iframe width="100%" height="450" scrolling="no" frameborder="no" allow="autoplay"
+        src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/167067525&color=%23efcb74&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+    </div>
+    </div>
+  </div>
+{% endblock %}
+
+</body>

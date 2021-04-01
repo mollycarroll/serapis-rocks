@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Serapis</title>
+    <title>{% block title %}Serapis - Authentic Rock Music{% endblock %}</title>
 
     {% load django_simple_bulma %}
     {% bulma %}
@@ -37,6 +37,7 @@
       <div class="navbar-start">
         <a class="navbar-item" href="{% url 'shows:index' %}">Home</a>
         <a class="navbar-item" href="{% url 'shows:showdates' %}">Shows</a>
+        <a class="navbar-item" href="{% url 'shows:music' %}">Music</a>
         <a class="navbar-item" href="{% url 'shows:photos' %}">Photos</a>
       </div>
       <div class="navbar-end">

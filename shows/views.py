@@ -25,6 +25,10 @@ def showdates(request):
 
     return render(request, 'shows/showdates.html', context)
 
+
+def music(request):
+    return render(request, 'shows/music.html')
+
 def photos(request):
     photos = Photo.objects.all()
 
