@@ -1,5 +1,8 @@
 from django.db import models
 
+class HomeText(models.Model):
+    text = models.TextField()
+
 class Show(models.Model):
     class Meta:
         ordering = ['-show_date']
@@ -32,3 +35,14 @@ class Photo(models.Model):
 
     upload = models.ImageField(upload_to='band_photos')
     caption = models.CharField(max_length=200)
+
+
+# class Music(models.Model):
+#     class Meta:
+#         ordering = ['-date_uploaded']
+
+#     def __str__(self):
+#         return str(self.title)
+
+#     title = models.CharField(max_length=50)
+#     date_uploaded = models.DateField(auto_now=True)

@@ -1,7 +1,5 @@
 {% load static %}
 
-<link rel="stylesheet" type="text/css" href="{% static 'shows/styles.css' %}">
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,13 +12,16 @@
     {% bulma %}
     {% font_awesome %}
 
+    <link rel="stylesheet" type="text/css" href="{% static 'shows/styles.css' %}">
+    <script src="{% static 'shows/index.js' %}"></script>
+
       <!-- google fonts -->
       <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
   {% block Facebook %}
   <div id="fb-root"></div>
-  <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v6.0"></script>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v10.0" nonce="V6ut2pC6"></script>
   {% endblock %}
 
   <nav class="navbar is-dark">
@@ -70,6 +71,15 @@
   </nav>
 
   {% block main %}
+
+  <section class="section">
+    <div class="container is-fullhd">
+        <img src="{% static 'shows/images/homebanner1.png' %}"/>
+    </div>
+    <h1 class="has-text-centered is-size-1 has-text-white has-text-weight-semibold">Serapis</h1>
+  </section>
+
+
   <section class="section">
     <div class="container is-fullhd">
       <div class="columns">
@@ -83,6 +93,7 @@
               <article class="tile is-child box has-background-warning has-text-info show-items">
                 <span class="is-size-3 show-text">
                   {{show.venue}}</span>
+                  <br/>
                 <span class="is-size-5 show-text">
                   {{show.city}}</span>
                 <span class="is-size-5 show-text">
@@ -97,16 +108,15 @@
 
 
         <div class="column">
-          <p class="is-size-6 has-margin-left-40 has-margin-right-40 has-padding-bottom-10">
-            For over 30 years, the band Serapis has worked hard to develop a sound that stands apart from other St. Louis area bands. A performance list that includes original rock, blues, and reggae - blended with carefully selected cover music has made
-            Serapis a leader on the St. Louis music scene. 
+          {% for text in home_text %}
+          <p class="is-size-6 has-margin-left-40 has-margin-right-40 has-padding-bottom-10 has-text-white">
+            {{ text.text }}
           </p>
+          {% endfor %}
         </div>
 
         <div class="column">
-          <h1>
-            Facebook widget here
-          </h1>
+          <div class="fb-page" data-href="https://www.facebook.com/SerapisStL" data-tabs="timeline, events" data-width="" data-height="" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/SerapisStL" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/SerapisStL">Serapis</a></blockquote></div>
         </div>
 
       </div>
@@ -117,28 +127,23 @@
   {% block secondary %}
   
   <br />
-  <!-- Members -->
-  <h1 class="title has-text-centered has-text-white">Serapis is...</h1>
 
-  <!-- <section class="columns">
-    {% for member in members %}
-    <div class="card column mx-6 is-paddingless">
-      <div class="card-image">
-        <figure class="image">
-          <img src="media/{{ MEDIA_URL }}{{ member.photo }}" />
-        </figure>
+  <section class="section">
+    <div class="columns">
+      <!-- latest song -- soundcloud -->
+      <div class="column">
+        <h1 class="has-text-centered has-text-white is-size-3">Latest Tune</h1>
+        <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/948172423&color=%23efcb74&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/serapis-authentic-rock" title="Serapis - Authentic Rock" target="_blank" style="color: #cccccc; text-decoration: none;">Serapis - Authentic Rock</a> · <a href="https://soundcloud.com/serapis-authentic-rock/all-over-the-world-pandemo" title="All Over The World PanDemo" target="_blank" style="color: #cccccc; text-decoration: none;">All Over The World PanDemo</a></div>
       </div>
-      <div class="card-content">
-        <p class="title is-5">
-          {{ member.name }}
-        </p>
-        <p class="subtitle is-7">
-          {{ member.description }}
-        </p>
+
+      <!-- youtube video -->
+      <div class="column">
+        <h1 class="has-text-centered has-text-white is-size-3">Latest Video</h1>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/UjSGD6JtCCo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
+
+
     </div>
-
-    {% endfor %} -->
 
   </section>
   {% endblock %}

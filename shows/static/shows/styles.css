@@ -11,10 +11,6 @@ p, a {
     font-family: "Open Sans", sans-serif;
   }
   
-.bandname {
-    text-align: center;
-  }
-  
 .show-text {
     text-align: justify;
     padding: 4px;
@@ -22,4 +18,8 @@ p, a {
 
 .thumb {
   height: 150px;
+}
+
+body {
+  background-color: #000000;
 }
