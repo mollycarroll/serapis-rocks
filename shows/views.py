@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.views.generic.base import TemplateView
-from .models import Show, Musician, Photo, HomeText, LatestVideo
+from .models import Show, Musician, Photo, HomeText, LatestVideo, Video
 
 
 def index(request):
@@ -27,7 +27,14 @@ def showdates(request):
 
 
 def music(request):
-    return render(request, 'shows/music.html')
+    video_list = Video.objects.all()
+
+    context = {
+        'video_list': video_list,
+    }
+
+    return render(request, 'shows/music.html', context)
+    
 
 def photos(request):
     photos = Photo.objects.all()

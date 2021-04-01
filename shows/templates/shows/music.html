@@ -5,6 +5,40 @@
 
 <body>
 {% block main %}
+  <!-- Serapis Live -->
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container">
+        <h1 class="title has-text-centered has-text-white">
+          Serapis Live
+        </h1>
+      </div>
+    </div>
+  </section>
+
+  <div class="container">
+    <section class="tile is-ancestor">
+  
+      <div class="tile is-parent">
+  
+          {% for video in video_list %}
+  
+          <div class="tile is-child is-4 pb-6">
+  
+          <h3 class="has-text-white is-size-4 mb-1 mx-2">{{ video.title }}</h3>
+          <iframe src="{{ video.url }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  
+  
+          </div>
+  
+          {% endfor %}
+  
+      </div>
+  
+  </section>
+  </div>
+
 <section class="hero">
     <div class="hero-body">
       <div class="container">
@@ -33,6 +67,7 @@
     </div>
     </div>
   </div>
+
 {% endblock %}
 
 </body>

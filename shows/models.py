@@ -11,9 +11,7 @@ class Show(models.Model):
         return str(self.show_date)
 
     venue = models.CharField(max_length=100)
-
     show_date = models.DateTimeField()
-
     city = models.CharField(max_length=100)
 
 
@@ -41,3 +39,9 @@ class Photo(models.Model):
     caption = models.CharField(max_length=200)
 
 
+class Video(models.Model):
+    def __str__(self):
+        return str(self.title)
+
+    title = models.CharField(max_length=100)
+    url = models.CharField(max_length=200)
