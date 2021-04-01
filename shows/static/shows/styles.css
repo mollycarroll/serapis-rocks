@@ -35,3 +35,15 @@ p, a {
 .shows-button:hover {
   background-color: #96bdc6;
 }
+
+.wrapper {
+  width: 90%;
+  text-align: center;
+}
+
+.photo {
+  display: inline-block;
+  vertical-align: top;
+  text-align: center;
+  padding: 20px;
+}

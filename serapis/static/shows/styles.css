@@ -1,3 +1,7 @@
+html {
+  background-color: #000000;
+}
+
 section {
     flex-wrap: wrap;
     font-family: "Open Sans", sans-serif;
@@ -11,10 +15,6 @@ p, a {
     font-family: "Open Sans", sans-serif;
   }
   
-.bandname {
-    text-align: center;
-  }
-  
 .show-text {
     text-align: justify;
     padding: 4px;
@@ -22,4 +22,28 @@ p, a {
 
 .thumb {
   height: 150px;
+}
+
+.shows-button {
+  border: none;
+  background-color: #81968f;
+  padding: 5%;
+  font-size: 22px;
+  border-radius: 10px;
+}
+
+.shows-button:hover {
+  background-color: #96bdc6;
+}
+
+.wrapper {
+  width: 90%;
+  text-align: center;
+}
+
+.test {
+  display: inline-block;
+  vertical-align: top;
+  text-align: center;
+  padding: 20px;
 }

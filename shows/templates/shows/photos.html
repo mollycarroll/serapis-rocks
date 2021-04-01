@@ -1,23 +1,25 @@
 {% extends 'shows/index.html' %}
 {% load static %}
+{% static 'shows/styles.css' %}
 
 {% block title %}Serapis - Photos{% endblock %}
 
 <body>
     {% block main %}
 
-    {% for photo in photos %}
-    <a target="_blank" href="media/{{ MEDIA_URL }}{{ photo.upload }}">
-        <img class="thumb" src="media/{{ MEDIA_URL }}{{ photo.upload }}" />
-    </a>
-    
-    <p>{{photo.caption}}</p>
+<div class="container">
+    <div class="wrapper">
+            {% for photo in photos %}
 
-    {% endfor %}
+            <div class="photo">
+                <a target="_blank" href="media/{{ MEDIA_URL }}{{ photo.upload }}">
+                    <img class="thumb" src="media/{{ MEDIA_URL }}{{ photo.upload }}" />
+                </a>
+                <h4 class="has-text-white">{{photo.caption}}</h4>
+            </div>
 
-    {% endblock %}
-
-    {% block secondary %}
-
+            {% endfor %}
+        </div>
+</div>
     {% endblock %}
 </body>
