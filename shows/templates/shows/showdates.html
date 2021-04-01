@@ -1,0 +1,27 @@
+{% extends 'shows/index.html' %}
+{% load static %}
+
+<body>
+    {% block main %}
+<div class="container show-list mx-auto">
+        <h1 class="title has-text-white pt-5">Upcoming Shows</h1>
+        <div class="tile is-ancestor">
+          <div class="tile is-vertical is-parent">
+            {% for show in show_list %}
+            <article class="tile is-child box has-background-warning has-text-info mx-5">
+              <span class="is-size-3 show-text">
+                {{show.venue}}</span>
+              <span class="is-size-5 show-text">
+                {{show.city}}</span>
+              <span class="is-size-5 show-text">
+                {{show.show_date|date:"l M j"}}</span>
+              <span class="is-size-5 show-text">
+                {{show.show_date|time:"P"}}</span>
+            </article>
+            {% endfor %}
+          </div>
+        </div>
+</div>
+    {% endblock %}
+
+</body>

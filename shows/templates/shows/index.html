@@ -19,15 +19,11 @@
       <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  {% block Facebook %}
-  <div id="fb-root"></div>
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v10.0" nonce="V6ut2pC6"></script>
-  {% endblock %}
 
   <nav class="navbar is-dark">
     <div class="navbar-brand">
-      <a class="navbar-item" href="">
-        serapis - authentic rock music
+      <a class="navbar-item" href="{% url 'shows:index' %}">
+        serapis
       </a>
 
       <div class="navbar-burger burger" data-target="SerapisNav">
@@ -40,6 +36,7 @@
     <div id="SerapisNav" class="navbar-menu">
       <div class="navbar-start">
         <a class="navbar-item" href="{% url 'shows:index' %}">Home</a>
+        <a class="navbar-item" href="{% url 'shows:showdates' %}">Shows</a>
         <a class="navbar-item" href="{% url 'shows:photos' %}">Photos</a>
       </div>
       <div class="navbar-end">
@@ -71,6 +68,9 @@
   </nav>
 
   {% block main %}
+
+  <div id="fb-root"></div>
+  <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v10.0" nonce="V6ut2pC6"></script>
 
   <section class="section">
     <div class="container is-fullhd">
@@ -104,6 +104,7 @@
               {% endfor %}
             </div>
           </div>
+          <a href="{% url 'shows:showdates' %}"><button class="shows-button">More Shows</button></a>
         </div>
 
 
@@ -122,9 +123,6 @@
       </div>
     </div>
   </section>
-  {% endblock %}
-
-  {% block secondary %}
   
   <br />
 

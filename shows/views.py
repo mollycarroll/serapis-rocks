@@ -14,6 +14,14 @@ def index(request):
     }
     return render(request, 'shows/index.html', context)
 
+def showdates(request):
+    show_list = Show.objects.order_by('show_date')
+
+    context = {
+        'show_list': show_list,
+    }
+
+    return render(request, 'shows/showdates.html', context)
 
 def photos(request):
     photos = Photo.objects.all()
