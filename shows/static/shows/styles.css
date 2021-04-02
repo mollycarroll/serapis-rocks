@@ -47,3 +47,26 @@ p, a {
   text-align: center;
   padding: 20px;
 }
+
+.spotify-button {
+  background-color: #1DB954;
+}
+
+.apple-button {
+  background-color: #fa57c1;
+}
+
+.youtube-button {
+  background-color: #ff0000;
+}
+
+.spotify-button, .apple-button, .youtube-button, .iheart-button {
+  border: none;
+  padding: 5%;
+  font-size: 22px;
+  border-radius: 10px;
+}
+
+.spotify-button:hover, .apple-button:hover, .youtube-button:hover, .iheart-button:hover {
+  background-color: #81968f;
+}

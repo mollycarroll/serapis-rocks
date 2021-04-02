@@ -1,4 +1,5 @@
 {% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'shows/styles.css' %}">
 
 <!DOCTYPE html>
 <html lang="en">
@@ -12,7 +13,6 @@
     {% bulma %}
     {% font_awesome %}
 
-    <link rel="stylesheet" type="text/css" href="{% static 'shows/styles.css' %}">
     <script src="{% static 'shows/index.js' %}"></script>
 
       <!-- google fonts -->
@@ -55,9 +55,9 @@
             </p>
             <!-- Listen button -->
             <p class="control">
-              <a class="button is-primary" target="blank" href="https://soundcloud.com/serapis-authentic-rock">
+              <a class="button is-primary" target="blank" href="https://open.spotify.com/artist/709uhn8APzrj4k4RuuhLZH?si=XsOXt_eRSWOReEcFxnD_Tw">
                 <span class="icon">
-                  <i class="fas fa-headphones-alt">
+                  <i class="fab fa-spotify">
                   </i> </span>
                 <span>Listen</span>
               </a>
@@ -124,8 +124,28 @@
       </div>
     </div>
   </section>
-  
-  <br />
+
+  <!-- listen online buttons -->
+
+  <div class="section container">
+    <h1 class="title has-text-white has-text-centered">Listen Online</h1>
+    <div class="columns has-text-centered is-flex">
+
+      <!-- spotify -->
+      <div class="column"><a href="https://open.spotify.com/artist/709uhn8APzrj4k4RuuhLZH?si=y4z2RPPnRc6uJS1rzmwKpg"><button class="spotify-button">Spotify</button></a></div>
+
+      <!-- apple music -->
+      <div class="column"><a href="https://music.apple.com/us/artist/serapis/1498281669"><button class="apple-button">Apple Music</button></a></div>
+
+      <!-- youtube music -->
+      <div class="column"><a href="https://music.youtube.com/channel/UC2rD-Y4w7eGdrAcm34uY1Sw"><button class="youtube-button">YouTube Music</button></a></div>
+
+      <!-- iheartradio -->
+      <div class="column"><a href="https://www.iheart.com/artist/serapis-276196/"><button class="iheart-button">iHeartRadio</button></a></div>
+
+    </div>
+    </div>
+  </div>
 
   <section class="section">
     <div class="columns">
@@ -147,7 +167,7 @@
 
         {% for video in latest_video %}
 
-        <iframe width="560" height="315" src="{{ video.url }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='{{ video.url }}' frameborder='0' allowfullscreen></iframe></div>
 
         {% endfor %}
 

@@ -46,6 +46,12 @@ p, a {
   vertical-align: top;
   text-align: center;
   padding: 20px;
-  margin: 10%;
-  border: 1px solid red;
+}
+
+.spotify-button {
+  border: none;
+  background-color: #1DB954;
+  padding: 5%;
+  font-size: 22px;
+  border-radius: 10px;
 }
