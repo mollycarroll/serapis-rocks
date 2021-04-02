@@ -39,6 +39,7 @@
         <a class="navbar-item" href="{% url 'shows:showdates' %}">Shows</a>
         <a class="navbar-item" href="{% url 'shows:music' %}">Music</a>
         <a class="navbar-item" href="{% url 'shows:photos' %}">Photos</a>
+        <a class="navbar-item" href="https://share.hsforms.com/1q0Vawob-R7CppEQRgqWQ5wboszw">Email Updates</a>
       </div>
       <div class="navbar-end">
         <div class="navbar-item">
@@ -77,11 +78,8 @@
     <div class="container is-fullhd">
         <img src="{% static 'shows/images/homebanner1.png' %}"/>
     </div>
-    <h1 class="has-text-centered is-size-1 has-text-white has-text-weight-semibold">Serapis</h1>
-  </section>
-
-
-  <section class="section">
+      <h1 class="has-text-centered is-size-1 has-text-white has-text-weight-semibold">Serapis</h1>
+      
     <div class="container is-fullhd">
       <div class="columns">
 
@@ -109,12 +107,16 @@
         </div>
 
 
-        <div class="column">
+        <div class="column is-half">
           {% for text in home_text %}
           <p class="is-size-6 has-margin-left-40 has-margin-right-40 has-padding-bottom-10 has-text-white">
             {{ text.text }}
           </p>
+          <br/>
           {% endfor %}
+          <div class="has-text-centered">
+            <img class="mummy" src="{% static 'shows/images/mummy.jpg' %}"/>
+          </div>
         </div>
 
         <div class="column">
@@ -127,21 +129,21 @@
 
   <!-- listen online buttons -->
 
-  <div class="section container">
+  <div class="container">
     <h1 class="title has-text-white has-text-centered">Listen Online</h1>
-    <div class="columns has-text-centered is-flex">
+    <div class="columns has-text-centered is-flex is-flex-wrap-wrap">
 
       <!-- spotify -->
-      <div class="column"><a href="https://open.spotify.com/artist/709uhn8APzrj4k4RuuhLZH?si=y4z2RPPnRc6uJS1rzmwKpg"><button class="spotify-button">Spotify</button></a></div>
+      <div class="column"><a href="https://open.spotify.com/artist/709uhn8APzrj4k4RuuhLZH?si=y4z2RPPnRc6uJS1rzmwKpg"><button class="spotify-button"><i class="fab fa-spotify"></i> Spotify</button></a></div>
 
       <!-- apple music -->
-      <div class="column"><a href="https://music.apple.com/us/artist/serapis/1498281669"><button class="apple-button">Apple Music</button></a></div>
+      <div class="column"><a href="https://music.apple.com/us/artist/serapis/1498281669"><button class="apple-button"><i class="fas fa-music"></i> Apple Music</button></a></div>
 
       <!-- youtube music -->
-      <div class="column"><a href="https://music.youtube.com/channel/UC2rD-Y4w7eGdrAcm34uY1Sw"><button class="youtube-button">YouTube Music</button></a></div>
+      <div class="column"><a href="https://music.youtube.com/channel/UC2rD-Y4w7eGdrAcm34uY1Sw"><button class="youtube-button"><i class="far fa-play-circle"></i> YouTube Music</button></a></div>
 
       <!-- iheartradio -->
-      <div class="column"><a href="https://www.iheart.com/artist/serapis-276196/"><button class="iheart-button">iHeartRadio</button></a></div>
+      <div class="column"><a href="https://www.iheart.com/artist/serapis-276196/"><button class="iheart-button"><i class="fas fa-heart"></i> iHeartRadio</button></a></div>
 
     </div>
     </div>

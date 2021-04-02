@@ -70,3 +70,11 @@ p, a {
 .spotify-button:hover, .apple-button:hover, .youtube-button:hover, .iheart-button:hover {
   background-color: #81968f;
 }
+
+.mummy {
+  width: 30%;
+}
+
+.hs-form {
+  color: #ffffff;
+}
