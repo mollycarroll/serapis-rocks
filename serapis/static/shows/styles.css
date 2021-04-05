@@ -60,6 +60,12 @@ p, a {
   background-color: #ff0000;
 }
 
+@media screen and (max-width: 600px) {
+  .listen-online {
+    display: none;
+  }
+}
+
 .spotify-button, .apple-button, .youtube-button, .iheart-button {
   border: none;
   padding: 5%;
