@@ -60,9 +60,18 @@ p, a {
   background-color: #ff0000;
 }
 
+.listen-mobile {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+}
+
 @media screen and (max-width: 600px) {
   .listen-online {
     display: none;
+  }
+  .listen-mobile {
+    display: flex;
   }
 }
 
