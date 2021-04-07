@@ -85,7 +85,9 @@ p, a {
 }
 
 .spotify-button:hover, .apple-button:hover, .youtube-button:hover, .iheart-button:hover {
-  background-color: #81968f;
+  background-color: #000000;
+  color: #ffffff;
+  border: 1px solid #ffffff;
 }
 
 .mummy {
