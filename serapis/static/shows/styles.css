@@ -36,16 +36,18 @@ p, a {
   background-color: #96bdc6;
 }
 
-.wrapper {
+.gallery {
   width: 90%;
   text-align: center;
 }
 
 .photo {
   display: inline-block;
-  vertical-align: top;
-  text-align: center;
   padding: 20px;
+}
+
+.caption {
+  background-color: #ffffff;
 }
 
 .spotify-button {
@@ -83,13 +85,11 @@ p, a {
 }
 
 .spotify-button:hover, .apple-button:hover, .youtube-button:hover, .iheart-button:hover {
-  background-color: #81968f;
+  background-color: #000000;
+  color: #ffffff;
+  border: 1px solid #ffffff;
 }
 
 .mummy {
   width: 30%;
-}
-
-footer {
-  background-color: hotpink;
 }
