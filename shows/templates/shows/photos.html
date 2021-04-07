@@ -12,10 +12,13 @@
             {% for photo in photos %}
 
             <div class="photo">
+
                 <a target="_blank" href="media/{{ MEDIA_URL }}{{ photo.upload }}">
                     <img class="thumb" src="media/{{ MEDIA_URL }}{{ photo.upload }}" />
                 </a>
-                <h4 class="has-text-white">{{photo.caption}}</h4>
+
+                <div class="caption"><p class="">{{photo.caption}}</p></div>
+
             </div>
 
             {% endfor %}
