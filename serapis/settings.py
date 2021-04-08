@@ -10,16 +10,11 @@ PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')
 MEDIA_ROOT = os.path.join(PROJECT_ROOT, 'media')
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
-
 SECRET_KEY = config('SECRET_KEY')
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1', 'mollycarroll.pythonanywhere.com', 'serapisstl.com', 'iloveserapis.com']
-
+ALLOWED_HOSTS = ['mollycarroll.pythonanywhere.com', 'serapisstl.com', 'iloveserapis.com']
 
 # Application definition
 
