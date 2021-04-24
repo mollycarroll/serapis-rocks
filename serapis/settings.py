@@ -12,9 +12,9 @@ MEDIA_ROOT = os.path.join(PROJECT_ROOT, 'media')
 
 SECRET_KEY = config('SECRET_KEY')
 
-DEBUG = False
+DEBUG = config('DEBUG')
 
-ALLOWED_HOSTS = ['mollycarroll.pythonanywhere.com', 'serapisstl.com', 'iloveserapis.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'mollycarroll.pythonanywhere.com', 'serapisstl.com', 'iloveserapis.com']
 
 # Application definition
 
